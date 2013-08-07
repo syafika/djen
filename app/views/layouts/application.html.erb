@@ -10,10 +10,10 @@
 			<img src="/gfx/logo.png">
 			<span></span>
       <% if current_user %>
-        <%= link_to "Djen Temen", buddies_path %>
-        <%= link_to "Profil Publik", users_path %>
-        <%= link_to "Profil Saya", current_user %>
-        <%= link_to "Djen Publik", ribbits_path %>
+        <%= link_to "Djen Temen - ", buddies_path %>
+        <%= link_to "Profil Publik - ", users_path %>
+        <%= link_to "Profil Saya - ", current_user %>
+        <%= link_to "Djen Publik - ", ribbits_path %>
         <%= link_to "Keluar", logout_path %>
       <% else %>
         <%= form_tag sessions_path do %>
