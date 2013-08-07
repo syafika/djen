@@ -1,0 +1,17 @@
+<div id="ribbits" class="panel left">
+    <h1>Profil Publik</h1>
+    <% @users.each do |user| %>
+    <div class="ribbitWrapper">
+        <a href="<%= user_path user %>">
+        <img class="avatar" src="<%= user.avatar_hash %>">
+        <span class="name"><%= user.name %></span></a>
+        @<%= user.username %>
+        <p>
+        <%= user.ribbits.size %> Djens
+        <span class="spacing"><%= user.followers.count %> Pengikut</span>
+        <span class="spacing"><%= user.followeds.count %> Mengikuti</span>
+        </p>
+        <p><%= user.ribbits.first.content %></p>
+    </div>
+    <% end %>
+</div>

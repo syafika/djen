@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet/less" href="/style.less">
+	<script src="/less.js"></script>
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<img src="/gfx/logo.png">
+			<span>Zea's Social Network</span>
+      <% if current_user %>
+        <%= link_to "Djen Temen", buddies_path %>
+        <%= link_to "Profil Publik", users_path %>
+        <%= link_to "Profil Saya", current_user %>
+        <%= link_to "Djen Publik", ribbits_path %>
+        <%= link_to "Keluar", logout_path %>
+      <% else %>
+        <%= form_tag sessions_path do %>
+          <%= text_field_tag :username, nil, placeholder: "username" %>
+          <%= password_field_tag :password, nil,  placeholder: "password" %>
+          <%= submit_tag "Log In" %>
+        <% end %>
+      <% end %>
+		</div>
+	</header>
+	<div id="content">
+    <div class="wrapper">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "flash #{name}" %>
+      <% end %>
+      <%= yield %>
+    </div>
+	</div>
+	<footer>
+		<div class="wrapper">
+			DjenHack - Zea's side project<img src="/gfx/logo-nettuts.png">
+		</div>
+	</footer>
+</body>
+</html>
