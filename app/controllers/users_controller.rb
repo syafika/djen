@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     
     if @user.save
       session[:user_id] = @user.id
-      redirect_to @user, notice: "Thank you for signing up for Ribbit!"
+      redirect_to @user, notice: "Terimakasih sudah mendaftar di Djen!"
     else
       render 'new'
     end
