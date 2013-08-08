@@ -10,7 +10,7 @@ class RibbitsController < ApplicationController
         if @ribbit.save
             redirect_to current_user 
         else
-            flash[:error] = "Problem!";
+            flash[:error] = "Error nih!";
             redirect_to current_user
         end
     end
